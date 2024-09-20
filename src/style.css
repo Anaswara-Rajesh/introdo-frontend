@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;600&display=swap");
+
+body {
+  font-family: "Mona Sans", sans-serif !important;
+}
+
+.top-nav-container {
+  background: linear-gradient(90.32deg, #febed9 -39.08%, #c8ddff 91.1%);
+  color: #241042;
+}
+.bold-nav-text {
+  font-weight: 600;
+}
+
+.close-btn-style {
+  font-size: 0.8rem;
+  color: #000000;
+}
+
+.custom-navbar {
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
+  box-shadow: 0 0 5px #e3e3e3;
+}
+
+.navbar-expand-lg {
+  padding: 1.8rem !important;
+}
+
+.login-btn {
+  border: 1px solid #170c34;
+  padding: 6px;
+  border-radius: 2rem;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.nav-link {
+  color: #170C34 !important;
+}
+
+.login-btn img {
+  height: auto;
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.custom-dropdown-btn{
+  border: 1px solid #170c34 !important;
+  border-radius: 2rem !important;
+  background-color: transparent;
+}
+
+.custom-arrow {
+  margin-left: 8px; 
+  font-size: 1.5rem; 
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .top-nav-container {
+    padding: 10px;
+  }
+
+  .nav-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .top-nav-container {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+  }
+}
