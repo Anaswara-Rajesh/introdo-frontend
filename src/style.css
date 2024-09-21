@@ -41,7 +41,7 @@ body {
   cursor: pointer;
 }
 .nav-link {
-  color: #170C34 !important;
+  color: #170c34 !important;
 }
 
 .login-btn img {
@@ -51,15 +51,335 @@ body {
   display: none !important;
 }
 
-.custom-dropdown-btn{
+.custom-dropdown-btn {
   border: 1px solid #170c34 !important;
   border-radius: 2rem !important;
   background-color: transparent;
 }
 
 .custom-arrow {
-  margin-left: 8px; 
-  font-size: 1.5rem; 
+  margin-left: 8px;
+  font-size: 1.5rem;
+}
+
+.empower-btn {
+  border: 1px solid #fc1777 !important;
+  border-radius: 2rem !important;
+  color: #fc1777 !important;
+  width: fit-content;
+  font-size: 13px !important;
+}
+
+.landing-heading {
+  color: var(--Secondary-Violet---700, #361863);
+  font-weight: 700;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.icon-border {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.btn-text {
+  flex-grow: 1;
+  text-align: center;
+}
+.line-manager-btn {
+  background: var(--Secondary-Violet---500, #482084) !important;
+}
+.employer-btn {
+  background: var(--Primary-Orange---500, #ff8100) !important;
+}
+.active-btn {
+  border-radius: 2rem !important;
+  height: 3rem;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  color: white !important;
+}
+
+.non-active-btn {
+  border: 1px solid var(--Secondary-Violet---700, #361863) !important;
+  border-radius: 2rem !important;
+  color: var(--Secondary-Violet---700, #361863) !important;
+  font-weight: 500;
+  height: 3rem;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+}
+
+.rotate-btn {
+  transform: rotate(90deg);
+  background: linear-gradient(124.64deg, #3a86ff 22.19%, #482084 94.33%);
+  color: white !important;
+  border-radius: 2rem !important;
+  font-size: 0.8rem !important;
+  font-weight: 400 !important;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+}
+.tab-view-container {
+  gap: 5rem;
+}
+.tab-description-wrapper {
+  position: relative;
+  width: 55%;
+  margin-top: 20px;
+}
+
+.tab-description {
+  border-radius: 2rem;
+  background-color: white;
+  z-index: 3;
+  position: relative;
+}
+
+.bg-layer-1 {
+  position: absolute;
+  bottom: -50px;
+  right: -40px;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  z-index: 2;
+}
+
+.bg-layer-2 {
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  z-index: 1;
+}
+
+.bg-line-manager-layer-1 {
+  position: absolute;
+  bottom: -40px;
+  right: 30px;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  z-index: 2;
+}
+
+.bg-line-manager-layer-2 {
+  position: absolute;
+  bottom: -80px;
+  right: -50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  z-index: 1;
+}
+
+.bg-employee-layer-1 {
+  position: absolute;
+  bottom: -40px;
+  right: 30px;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  z-index: 2;
+}
+
+.bg-employee-layer-2 {
+  position: absolute;
+  bottom: -80px;
+  right: 50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  z-index: 1;
+}
+
+.tab-text {
+  color: var(--Secondary-Violet---700, #361863);
+  font-weight: 600;
+}
+
+.description-text {
+  font-weight: 400;
+  color: var(--Tertiary-AshViolet---400, #433a5b);
+}
+
+.unlock-container {
+  padding-top: 5rem;
+}
+
+.initial-card-style {
+  background: linear-gradient(162.04deg, #ffae5c 2.79%, #fd4190 80.66%);
+  color: white !important;
+  border-radius: 2rem !important;
+  border: none;
+  padding: 2rem;
+}
+.card-title {
+  font-weight: 600;
+}
+.card-description {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.small-card-style {
+  box-shadow: 0px -8px 13px -9px #0000000f inset;
+  background: linear-gradient(190.07deg, #fd4190 -12.2%, #a8c5ff 63%);
+  border-radius: 2rem !important;
+  border: none;
+  padding: 1rem;
+}
+
+.small-card-two-style {
+  text-align: center;
+  background: linear-gradient(156.77deg, #febed9 -37.31%, #c8ddff 52.67%);
+  border-radius: 2rem !important;
+  border: none;
+  padding: 2rem;
+  position: relative;
+  padding-bottom: 0;
+  overflow: visible; 
+}
+
+.small-card-two-text {
+  color: var(--Tertiary-AshViolet---400, #433a5b);
+  font-size: 400;
+}
+
+.third-card-title {
+  font-weight: 600;
+  color: var(--Secondary-Violet---900, #241042);
+}
+
+.third-card-text {
+  font-size: 400;
+  background: var(--Tertiary-AshViolet---400, #433a5b);
+}
+
+.card-btn {
+  background: var(--Secondary-Violet---600, #3f1c74);
+  border: none;
+  border-radius: 2rem;
+  color: white;
+  padding: 0.4rem;
+  position: absolute;
+  left: 75%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.white-card {
+  background-color: #fff;
+  padding: 1.3rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: -2rem;
+  z-index: 1;
+}
+
+.employee-name {
+  color: var(--Tertiary-Dark--AshViolet---500, #170c34);
+  font-weight: 600;
+}
+
+.employee-period {
+  color: var(--Tertiary-AshViolet---300, #6f6881);
+  font-weight: 400;
+}
+
+.employee-divider {
+  border-top: var(--Neutral-White, #adb5bdcc) solid !important;
+}
+
+.employee-hrs {
+  color: var(--Tertiary-Dark--AshViolet---500, #170c34);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.progress {
+  background-color: var(--Secondary-Blue---50, #ebf3ff) !important;
+  height: 0.7rem !important;
+}
+
+.progress-bar {
+  width: 70%;
+  background: linear-gradient(
+    126.9deg,
+    #fc1777 -9.7%,
+    #3a86ff 140.79%
+  ) !important;
+}
+
+.fourth-card-style {
+  background: linear-gradient(340.7deg, #5e9cff 33.95%, #69489a 114.7%);
+  color: white !important;
+  border-radius: 2rem !important;
+  border: none;
+}
+
+.cards-div {
+  position: absolute;
+  top: 10px;
+  right: -12px;
+}
+
+.fifth-card-style {
+  background: linear-gradient(105.4deg, #fd6ba8 2.24%, #5e9cff 96.35%);
+  color: white !important;
+  border-radius: 2rem !important;
+  border: none;
+  padding: 0.8rem;
+  position: relative;
+}
+
+.sixth-card-style {
+  background: linear-gradient(136.55deg, #8a70b0 8.08%, #482084 117.63%);
+  color: white !important;
+  border-radius: 2rem !important;
+  border: none;
+}
+
+
+.img-container {
+  position: relative;
+  bottom: -16px;
+  left: 158px;
+}
+
+.card-image {
+  object-fit: cover;
+  position: relative;
+}
+
+.text-container {
+  width: 50%; 
+}
+
+.small-card-container {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 0;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
