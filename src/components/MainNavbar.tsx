@@ -85,7 +85,7 @@ function MainNavbar() {
           </Nav>
           <Nav>
             <Nav.Link href="#en-btn">
-              <DropdoownBtn />
+              <DropdoownBtn customStyle="custom-dropdown-btn"/>
             </Nav.Link>
             <Nav.Link href="#login-btn" className="ps-4">
               <button type="button" className="login-btn">

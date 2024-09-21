@@ -1,14 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CommonBtn from "./CommonBtn";
 import { Container } from "react-bootstrap";
-import TabView from "./TabView";
+import TabComponent from "./TabComponent";
 
 function LandingSection() {
   const [activeBtn, setActiveBtn] = useState("HR Managers");
+  const roles = ["HR Managers", "Line Managers", "Employees"];
+  const intervalRef = useRef<NodeJS.Timeout | null>(null); 
 
   const handleBtnClick = (role: string) => {
     setActiveBtn(role);
+    resetAutoSwitch(); // Reset auto-switch timer after manual click
   };
+
+  const autoSwitchTabs = () => {
+    setActiveBtn((prevRole) => {
+      const currentIndex = roles.indexOf(prevRole);
+      const nextIndex = (currentIndex + 1) % roles.length; 
+      return roles[nextIndex];
+    });
+  };
+
+  // Start auto-switching every 5 seconds
+  const startAutoSwitch = () => {
+    intervalRef.current = setInterval(autoSwitchTabs, 5000);
+  };
+
+  // Reset auto-switch timer after manual interaction
+  const resetAutoSwitch = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    startAutoSwitch();
+  };
+
+  useEffect(() => {
+    startAutoSwitch();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
 
   return (
     <div className="position-relative pb-5">
@@ -60,7 +89,7 @@ function LandingSection() {
           />
         </div>
 
-        <TabView activeRole={activeBtn} />
+        <TabComponent activeRole={activeBtn} />
       </Container>
     </div>
   );

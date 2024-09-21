@@ -1,17 +1,17 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-function DropdoownBtn() {
+function DropdoownBtn({customStyle}:any) {
   return (
     <div className="btn-group">
       <button 
         type="button" 
-        className="btn dropdown-toggle custom-dropdown-btn" 
+        className={`btn dropdown-toggle ${customStyle}`} 
         data-toggle="dropdown" 
         aria-haspopup="true" 
         aria-expanded="false"
       >
-        EN <MdKeyboardArrowDown className="custom-arrow" /> 
+        EN  <MdKeyboardArrowDown className="custom-arrow" /> 
       </button>
       <div className="dropdown-menu">
         <a className="dropdown-item" href="#">Action</a>

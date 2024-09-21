@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import TabItem from "./TabItem";
 import { IconOne, IconTwo, MessageIcon } from "./SvgIcons";
 
-function TabView({ activeRole }: { activeRole: string }) {
+function TabComponent({ activeRole }: { activeRole: string }) {
   console.log(activeRole, "activeRole");
   let color = "";
   if (activeRole === "HR Managers") {
@@ -170,4 +170,4 @@ function TabView({ activeRole }: { activeRole: string }) {
   );
 }
 
-export default TabView;
+export default TabComponent;

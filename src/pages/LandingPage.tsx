@@ -3,6 +3,7 @@ import TopNavbar from "../components/TopNavbar";
 import MainNavbar from "../components/MainNavbar";
 import LandingSection from "../components/LandingSection";
 import UnlockContainer from "../components/UnlockContainer";
+import FooterComponent from "../components/FooterComponent";
 
 function LandingPage() {
   return (
@@ -11,6 +12,7 @@ function LandingPage() {
       <MainNavbar />
       <LandingSection />
       <UnlockContainer />
+      <FooterComponent />
     </>
   );
 }

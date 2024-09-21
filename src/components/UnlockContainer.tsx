@@ -6,7 +6,7 @@ import EmployeeCard from "./EmployeeCard";
 
 const UnlockContainer = () => {
   return (
-    <Container className="d-flex flex-column justify-content-center align-items-center unlock-container pb-4">
+    <Container className="d-flex flex-column justify-content-center align-items-center unlock-container pb-4 mb-5">
       <CommonBtn btnName={"WHY INTRODO?"} customStyle={"empower-btn mt-5"} />
       <h1 className="pt-4 pb-5 text-center landing-heading">
         Unlock The Perks!
