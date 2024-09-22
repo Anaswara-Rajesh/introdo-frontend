@@ -17,7 +17,7 @@ function SmallCard({
     <div
       className="small-card-container d-flex justify-content-center align-items-center"
       style={{
-        backgroundColor: color,
+        background: color,
         minWidth: width,
         minHeight: height,
         maxHeight: height,

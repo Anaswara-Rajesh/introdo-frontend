@@ -1,8 +1,13 @@
 import { Container } from "react-bootstrap";
 import { FaArrowRight } from "react-icons/fa6";
 import DropdoownBtn from "./DropdoownBtn";
+import MobileViewHeader from "./MobileViewHeader";
+import FooterContent from "./FooterContent";
+import useIsMobile from "../hooks/useIsMobile";
 
 function FooterComponent() {
+  const isMobile = useIsMobile();
+
   const products = [
     "Core HR",
     "Employee Management",
@@ -40,108 +45,128 @@ function FooterComponent() {
   return (
     <div className="footer-container pt-5 pb-5">
       <Container className="container pt-5">
-        <div className="row">
-          <div className="col">
-            <img src="./introdo-logo.svg" alt="introdo logo" />
-          </div>
-          <div className="col-5">
-            <h5 className="footer-text-head">
-              HR Updates, straight to your Inbox - Subscribe Today{" "}
-            </h5>
+        {!isMobile ? (
+          <div className="row">
+            <div className="col">
+              <img src="./introdo-logo.svg" alt="introdo logo" />
+            </div>
+            <div className="col-5">
+              <h5 className="footer-text-head">
+                HR Updates, straight to your Inbox - Subscribe Today{" "}
+              </h5>
 
-            <div className="position-relative pt-2">
-              <input
-                className="form-control d-flex justify-content-center align-items-center border rounded-pill"
-                type="text"
-                placeholder="Enter Work Emails"
-                id="example-search-input"
-                style={{
-                  paddingLeft: "1rem",
-                  padding: "0.6rem",
-                  color: "var(--Tertiary-AshViolet---200, #9B97A8)",
-                }}
-              />
-              <button
-                className="btn outline-btn btn-outline-secondary border-start-0 border rounded-pill position-absolute"
-                type="button"
-                style={{
-                  right: "5px",
-                  top: "57%",
-                  transform: "translateY(-50%)",
-                  backgroundColor: "#482084",
-                }}
+              <div className="position-relative pt-2">
+                <input
+                  className="form-control d-flex justify-content-center align-items-center border rounded-pill"
+                  type="text"
+                  placeholder="Enter Work Emails"
+                  id="example-search-input"
+                  style={{
+                    paddingLeft: "1rem",
+                    padding: "0.6rem",
+                    color: "var(--Tertiary-AshViolet---200, #9B97A8)",
+                  }}
+                />
+                <button
+                  className="btn outline-btn btn-outline-secondary border-start-0 border rounded-pill position-absolute"
+                  type="button"
+                  style={{
+                    right: "5px",
+                    top: "57%",
+                    transform: "translateY(-50%)",
+                    backgroundColor: "#482084",
+                  }}
+                >
+                  <FaArrowRight color="white" />
+                </button>
+              </div>
+            </div>
+            <div className="col d-flex flex-column align-items-center justify-content-center gap-3">
+              <div
+                className="d-flex justify-content-end align-items-end"
+                style={{ paddingLeft: "15rem" }}
               >
-                <FaArrowRight color="white" />
-              </button>
+                <DropdoownBtn customStyle="lang-dropdown-btn" />
+              </div>
+              <div className="d-flex gap-3 social-icons-div">
+                <img src="./facebook.svg" />
+                <img src="./instagram.svg" />
+                <img src="./linkedin.svg" />
+              </div>
             </div>
           </div>
-          <div className="col d-flex flex-column align-items-center justify-content-center gap-3">
-            <div
-              className="d-flex justify-content-end align-items-end"
-              style={{ paddingLeft: "15rem" }}
-            >
-              <DropdoownBtn customStyle="lang-dropdown-btn" />
+        ) : (
+          <MobileViewHeader />
+        )}
+        {!isMobile ? (
+          <Container className="row pt-5 mt-5" style={{ color: "white" }}>
+            <div className="col">
+              <h3 className="footer-ul-head pb-3">Products</h3>
+              <ul className="no-bullets">
+                {products.map((product, index) => (
+                  <li key={index} className="pb-2">
+                    {product}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="d-flex gap-3">
-              <img src="./facebook.svg" />
-              <img src="./instagram.svg" />
-              <img src="./linkdedin.svg" />
+            <div className="col">
+              <h3 className="footer-ul-head pb-3">Products</h3>
+              <ul className="no-bullets">
+                {resources.map((product, index) => (
+                  <li key={index} className="pb-2">
+                    {product}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-        </div>
 
-        <Container className="row pt-5 mt-5" style={{ color: "white" }}>
-          <div className="col">
-            <h3 className="footer-ul-head pb-3">Products</h3>
-            <ul className="no-bullets">
-              {products.map((product, index) => (
-                <li key={index} className="pb-2">
-                  {product}
+            <div className="col">
+              <h3 className="footer-ul-head pb-3">Platform</h3>
+              <ul className="no-bullets">
+                {platforms.map((product, index) => (
+                  <li key={index} className="pb-2">
+                    {product}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="col">
+              <h3 className="footer-ul-head pb-3">Mobile App</h3>
+              <ul className="no-bullets">
+                <li className="pb-2">
+                  <img src="./play.svg" />
                 </li>
-              ))}
-            </ul>
-          </div>
-          <div className="col">
-            <h3 className="footer-ul-head pb-3">Products</h3>
-            <ul className="no-bullets">
-              {resources.map((product, index) => (
-                <li key={index} className="pb-2">
-                  {product}
+                <li className="pb-2">
+                  <img src="./apple.png" />
                 </li>
-              ))}
-            </ul>
-          </div>
+              </ul>
+            </div>
+          </Container>
+        ) : (
+          <FooterContent
+            products={products}
+            resources={resources}
+            platforms={platforms}
+          />
+        )}
 
-          <div className="col">
-            <h3 className="footer-ul-head pb-3">Platform</h3>
-            <ul className="no-bullets">
-              {platforms.map((product, index) => (
-                <li key={index} className="pb-2">
-                  {product}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="col">
-            <h3 className="footer-ul-head pb-3">Mobile App</h3>
-            <ul className="no-bullets">
-              <li className="pb-2">
-                <img src="./play.svg" />
-              </li>
-              <li className="pb-2">
-                <img src="./apple.png" />
-              </li>
-            </ul>
-          </div>
-        </Container>
-
-        <div className="d-flex justify-content-center align-items-center gap-5 icons-div-container pt-5 pb-5 mt-5">
+        <div className="row d-flex justify-content-center align-items-center gap-sm-5 gap-2 icons-div-container pt-5 pb-5 mt-5">
           {images.map((img, index) => (
-            <img className="pt-2 pb-2" key={index} src={img}></img>
+            <div
+              key={index}
+              className="col-4 col-sm-3 col-md-2 col-lg-1 d-flex justify-content-center mobile"
+            >
+              <img
+                className="img-fluid pt-2 pb-2"
+                src={img}
+                alt={`icon-${index}`}
+              />
+            </div>
           ))}
         </div>
 
-        <div className="d-flex justify-content-center align-items-center gap-5 pt-3 pb-2 privacy-policy-text">
+        <div className="d-flex justify-content-center align-items-center gap-sm-5 gap-3 pt-3 pb-2 privacy-policy-text">
           <span className="policy-item">Privacy Policy</span>
           <span className="policy-item">Terms of Use</span>
           <span>Cookie Policy</span>
@@ -152,7 +177,7 @@ function FooterComponent() {
         </h5>
 
         <div className="d-flex justify-content-end message-icon">
-          <img src='./message.png'/>
+          <img src="./message.png" />
         </div>
       </Container>
     </div>

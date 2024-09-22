@@ -3,21 +3,29 @@ import Navbar from "react-bootstrap/Navbar";
 import CloseButton from "react-bootstrap/CloseButton";
 
 function TopNavbar() {
-  const [visible, setVisible] = useState(true);
+  const [isHidden, setIsHidden] = useState(false);
 
-  return visible ? (
-    <Navbar className="d-flex justify-content-center align-items-center top-nav-container">
+  const handleClose = () => {
+    setIsHidden(true);
+  };
+
+  return (
+    <Navbar
+      className={`d-flex justify-content-center align-items-center top-nav-container ${
+        isHidden ? "hide-navbar" : ""
+      }`}
+    >
       <span className="nav-text">
         Happy Employees, Effortless HR: Experience the introdo Advantage.
         <span className="ps-2 bold-nav-text">Try it for Free!</span>
       </span>
       <CloseButton
         className="d-md-none me-2 close-btn-style"
-        onClick={() => setVisible(false)}
+        onClick={handleClose}
         aria-label="Close"
       />
     </Navbar>
-  ) : null;
+  );
 }
 
 export default TopNavbar;

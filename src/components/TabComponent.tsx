@@ -2,8 +2,11 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import TabItem from "./TabItem";
 import { IconOne, IconTwo, MessageIcon } from "./SvgIcons";
+import useIsMobile from "../hooks/useIsMobile";
 
 function TabComponent({ activeRole }: { activeRole: string }) {
+  const isMobile = useIsMobile();
+
   console.log(activeRole, "activeRole");
   let color = "";
   if (activeRole === "HR Managers") {
@@ -79,13 +82,15 @@ function TabComponent({ activeRole }: { activeRole: string }) {
 
   return (
     <Container className="d-flex justify-content-center align-items-center pt-5 tab-view-container">
-      <div className="mt-3">
+      <div className="mt-3 d-flex flex-column vertical-container">
         {items[activeRole].map((item: any, index: any) => (
           <React.Fragment key={index}>
             <TabItem icon={item.icon} text={item.text} />
             {index < items[activeRole].length - 1 && (
               <hr
+                className="hide-hr"
                 style={{
+                  width: "90%",
                   color:
                     activeRole === "HR Managers"
                       ? "#A4C7FF"
@@ -100,9 +105,14 @@ function TabComponent({ activeRole }: { activeRole: string }) {
         ))}
       </div>
 
-      <div className="tab-description-wrapper position-relative">
+      <div
+        className={`tab-description-wrapper 
+    ${isMobile && activeRole === "Line Managers" ? "move-left" : ""} 
+    ${isMobile && activeRole === "Employees" ? "move-right" : ""} 
+    position-relative`}
+      >
         <div
-          className="tab-description p-5 position-relative"
+          className="tab-description p-sm-5 p-5 position-relative"
           style={{
             border:
               activeRole === "HR Managers"

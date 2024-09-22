@@ -7,13 +7,13 @@ import FooterComponent from "../components/FooterComponent";
 
 function LandingPage() {
   return (
-    <>
+    <React.Fragment>
       <TopNavbar />
-      <MainNavbar />
+       <MainNavbar />
       <LandingSection />
       <UnlockContainer />
       <FooterComponent />
-    </>
+    </React.Fragment>
   );
 }
 
